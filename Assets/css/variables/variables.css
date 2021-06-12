@@ -1,0 +1,10 @@
+:root {
+    --font-colour: black;
+    --hover-colour: rgb(0, 219, 219);
+    --bg-colour: white;
+}
+
+@font-face {
+    font-family: "Futura";
+    src: url(../../fonts/FuturaPTBook.otf);
+}
