@@ -1,0 +1,29 @@
+@media screen and (max-width: 867px) {
+    .about-img {
+        height: 20em;
+    }
+
+    .about-text {
+        width: 20em;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .about-img {
+        height: 17em;
+    }
+
+    .about-text {
+        width: 15em;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .about-img {
+        height: 14em;
+    }
+
+    .about-text {
+        width: 11.5em;
+    }
+}

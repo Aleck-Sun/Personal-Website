@@ -3,15 +3,20 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
-a, h1, p {
+a, h1, h2, p {
     color: var(--font-colour);
     font-family: Futura;
 }
 
 h1 {
     font-size: 3.8em;
+}
+
+h2 {
+    font-size: 3em;
 }
 
 /* Header Styles */
@@ -93,4 +98,32 @@ h1 {
 .social-media-icon:hover {
     color: var(--hover-colour);
     transform: translateY(-0.1em);
+}
+
+/* About Styles */
+#about {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-desc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 3em 1em;
+}
+
+.about-img {
+    height: 15em;
+    border-radius: 50%;
+}
+
+.about-text {
+    text-align: justify;
+    margin: 2em;
+    font-size: 1.2em;
+    width: 26em;
 }
