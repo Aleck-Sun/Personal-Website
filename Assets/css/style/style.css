@@ -289,7 +289,7 @@ audio {
     margin: 1rem 2rem;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 .project-wrapper a {
@@ -298,6 +298,7 @@ audio {
 }
 
 .project {
+    height: 100%;
     width: 100%;
     padding: 1rem;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
