@@ -6,14 +6,18 @@
     scroll-behavior: smooth;
 }
 
-a, h1, h2, h4, h5, p {
+a, h1, h4, h5, p {
     color: var(--font-colour);
     font-family: Futura;
 }
 
-h3 {
+h2, h3 {
     color: var(--hover-colour);
     font-family: Futura;
+}
+
+a {
+    text-decoration: none;
 }
 
 h1 {
@@ -34,6 +38,11 @@ h4 {
 
 h5 {
     font-size: 1em;
+}
+
+audio {
+    width: 100%;
+    height: 15%;
 }
 
 /* Header Styles */
@@ -72,14 +81,33 @@ h5 {
 }
 
 .nav-item {
+    display: inline-block;
+    position: relative;
     transition: .2s ease-in-out;
     text-decoration: none;
     font-size: 1.4em;
     margin: 0 1em;
 }
 
+.nav-item::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--hover-colour);
+    transform-origin: center;
+    transition: all 0.25s ease-out;
+}
+
 .nav-item:hover {
     color: var(--hover-colour);
+}
+
+.nav-item:hover::after {
+    transform: scaleX(1);
 }
 
 /* Home Styles */
@@ -92,6 +120,7 @@ h5 {
 }
 
 .title {
+    margin: 0 1em;
     text-align: center;
     margin-bottom: 2em;
 }
@@ -121,8 +150,23 @@ h5 {
     transform: translateY(-0.1em);
 }
 
+.next-arrow {
+    text-decoration: none;
+    position: absolute;
+    bottom: 5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fa-chevron-down {
+    transform: scale(1.5, 1);
+    margin-top: -0.5em;
+}
+
 /* About Styles */
 #about {
+    padding-top: 4em;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -134,7 +178,7 @@ h5 {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    margin: 1.5em 1em 5em;
+    margin: 1.5em 1em;
 }
 
 .about-img {
@@ -149,6 +193,77 @@ h5 {
     width: 26em;
 }
 
+.hobbies {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.hobby {
+    position: relative;
+    width: 15em;
+    padding: 7.5em 0;
+    margin: 3em 1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.hobby-card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-position: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transform-style: preserve-3d;
+    transition: 0.5s ease-in-out;
+    backface-visibility: hidden;
+}
+
+.front h4 {
+    font-size: 3em;
+    color: white;
+    text-shadow: 1px 1px 7px #000000;
+}
+
+.hobby:nth-child(1) .front {
+    background-image: url("../../../Files/Music.jpg");
+}
+
+.hobby:nth-child(2) .front {
+    background-image: url("../../../Files/Track.jpg");
+}
+
+.hobby:nth-child(3) .front {
+    background-image: url("../../../Files/Anime.jpg");
+}
+
+.front {
+    transform: perspective(50em) rotateY(0);
+}
+
+.hobby:hover .front {
+    transform: perspective(50em) rotateY(-180deg);
+}
+
+.back {
+    display: block;
+    padding: 1em;
+    background-color: white;
+    transform: perspective(50em) rotateY(-180deg);
+}
+
+.hobby:hover .back {
+    transform: perspective(50em) rotateY(-360deg);
+}
+
 /* Projects Style */
 #projects {
     height: calc(100vh - 4em);
@@ -156,7 +271,7 @@ h5 {
 }
 
 #projects h3 {
-    margin: 0 3rem;
+    margin: 0 5%;
     padding-top: 2rem;
 }
 
@@ -166,19 +281,24 @@ h5 {
 }
 
 #projects .center hr {
-    width: 95%;
+    width: 90%;
     border: 0.25rem solid var(--hover-colour);
 }
 
 .project-wrapper {
     margin: 1rem 2rem;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
 }
 
-.project {
+.project-wrapper a {
     width: 23rem;
-    margin: 1rem;
+    margin: 1.5rem;
+}
+
+.project {
+    width: 100%;
     padding: 1rem;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     border-radius: 1rem;

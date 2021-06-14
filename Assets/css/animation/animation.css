@@ -1,0 +1,26 @@
+.fa-chevron-down {
+    animation: arrow 2s infinite;
+}
+
+.fa-chevron-down:nth-child(2) {
+    color: var(--hover-colour);
+    animation-delay: -0.1s;
+}
+
+.fa-chevron-down:nth-child(3) {
+    animation-delay: -0.2s;
+}
+
+@keyframes arrow {
+    0% {
+        opacity: 0;
+        transform: translateY(-0.3em);
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(0.3em);
+    }
+}
